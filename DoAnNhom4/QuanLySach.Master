@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="QuanLySach.Master.cs" Inherits="DoAnNhom4.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .container{
+            display:flex;
+
+        }
+        .left{
+            width:30%;
+            float:left;
+        }
+        .right{
+            width:30%;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="left">
+                <h3>DANH SÁCH CÁC LOẠI SÁCH </h3>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" Text='<%# Eval("TenChuDe") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList></div>
+            <div class="center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="right">
+                <asp:Login ID="Login1" runat="server"></asp:Login>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
